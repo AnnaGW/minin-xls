@@ -3,12 +3,13 @@ import {ExcelComponent} from '@core/ExcelComponent';
 export class Header extends ExcelComponent {
   static className = 'excel__header'
 
-  // constructor($root) {
-  //   super($root, {
-  //     name: 'Header',
-  //     listeners: ['mouseup'] // виды событий для этого компонента
-  //   })
-  // }
+  constructor($root, options) {
+    super($root, {
+      name: 'Header',
+      // listeners: ['mouseup'] // виды событий для этого компонента
+      ...options,
+    })
+  }
 
   toHTML() {
     return '<input type="text" class="input" value="Новая таблица" />\n' +
